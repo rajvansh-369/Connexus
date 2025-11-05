@@ -10,7 +10,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         // $middleware->alias(['auth.session', Authenticate::class]);
         $middleware->alias([
-            'auth.session' => RedirectIfAuthenticatedToChat::class,
+            'auth.session_check' => RedirectIfAuthenticatedToChat::class,
         ]);
     })
     ->withRouting(

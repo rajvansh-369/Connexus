@@ -12,4 +12,13 @@ class ChatController extends Controller
         $user = Auth::user();
         return view('chat', ['user' => $user]);
     }
+   
+   
+    public function testChat()
+    {
+        $user = Auth::user();
+
+       
+        return view('pages.chat', ['user' => $user]);
+    }
 }
