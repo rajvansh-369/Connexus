@@ -1,0 +1,8 @@
+node_modules
+vendor
+public/storage
+public/vendor
+storage/*.log
+storage/framework
+storage/debugbar
+storage/app/public

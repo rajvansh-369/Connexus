@@ -27,10 +27,11 @@ services:
     image: mysql:8.0
     container_name: laravel_db
     environment:
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret     # For root user password
       MYSQL_DATABASE: laravel
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
+      # Optional: create a custom user
+      # MYSQL_USER: laraveluser
+      # MYSQL_PASSWORD: userpassword
     ports:
       - "3306:3306"
     volumes:

@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Chat Application</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @vite(['resources/js/app.js'])
 
     <link rel="stylesheet" href="{{ asset('assets/css/custome.css') }}">
     @livewireStyles
 </head>
- @vite('resources/js/app.js')
+
 <body>
 
     <div class="container">
@@ -44,23 +46,7 @@
         });
 
 
-        // Auto-resize textarea
-        const textarea = document.querySelector('.message-input');
-        textarea.addEventListener('input', function() {
-            this.style.height = 'auto';
-            this.style.height = Math.min(this.scrollHeight, 100) + 'px';
-        });
 
-        // Send message on Enter (but allow Shift+Enter for new line)
-        textarea.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                // Add your send message logic here
-                console.log('Message sent:', this.value);
-                this.value = '';
-                this.style.height = 'auto';
-            }
-        });
     </script>
 
 

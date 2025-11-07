@@ -18,7 +18,7 @@ class ChatController extends Controller
     {
         $user = Auth::user();
 
-       
+        // dd($user);
         return view('pages.chat', ['user' => $user]);
     }
 }

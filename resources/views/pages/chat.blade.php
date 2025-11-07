@@ -57,23 +57,5 @@
         </div>
     </div>
 
-    <script>
-       
-
-        // Wait for Echo to be initialized
-        setTimeout(() => {
-            if (window.Echo) {
-                window.Echo.channel('test-channel')
-                    .listen('.TestBroadcast', (e) => {
-                        console.log('Received message:', e.message);
-                        // Emit event to Livewire only
-                        // Livewire.emit('livewireMessageReceived', e.message);
-                        window.Livewire.dispatch('livewireMessageReceived', { message: e.message });
-                    });
-                console.log('Event listener attached');
-            } else {
-                console.log('Echo is not initialized');
-            }
-        }, 1000);
-    </script>
+    
 @endsection
